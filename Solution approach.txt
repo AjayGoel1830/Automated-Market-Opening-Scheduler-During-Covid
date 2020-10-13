@@ -1,0 +1,29 @@
+﻿Artificial Intelligence 1 - Assignment 1
+Akarsh Kumar[B17ME007] - Ajay Goel [B17ME004] - Prakhar Gupta [B17ME40]
+
+
+Solution
+The state of the schedule of all shops stored in a 3d array of size dimension m,t,k.
+* m - number of parallel markets
+* t - time slots available
+* k - total types of shops opening in one time slot in one market
+
+
+
+Initialization
+The state is initialized in an increasing order from 1 to n initially, where n=m*t*k.
+
+
+Algorithm Used ( Search Strategy )
+As the problem is a maximization problem, where we need to maximize the goodness value.
+* We used a local search strategy which is a greedy hill climb algorithm which has the maximum goodness value. 
+* A random state is generated in this algorithm using random values of m, t, k and goodness of the state is calculated with a separate goodness function. At each step we randomly select two different shops and then swap those shops.
+* Then we calculate their goodness value, if the goodness value of the current state (after swapping) is greater than the goodness value of the previous state before swapping.
+* We change the maximum goodness value to the current goodness value and the best state to the current state.
+* If the current state goodness value (after swapping) is less than the maximum goodness value encountered before the state, then we again make the current state to the best state.
+
+
+Formulating problem as greedy hill climb algorithm
+* In the above solution, we used greedy hill climbing such that as in greedy hill climbing, we first select a random state, which we did by selecting sorted order of type of shops (1 to n).
+* Then like in the greedy hill climb algorithm as we generate a random state, here in our solution we did the same by using random values of m, t, k . After this, we calculated the goodness value of the new state and checked that if the goodness value is greater than the previous maximum of goodness value as it is done in the greedy hill climb algorithm. 
+* Then we repeated the above two steps to reach the most optimal solution.
